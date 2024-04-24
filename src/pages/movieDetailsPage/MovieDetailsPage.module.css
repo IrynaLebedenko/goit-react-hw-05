@@ -1,0 +1,22 @@
+.detailsContainer{
+    display: flex;
+    gap: 40px;
+}
+.movieDetails{
+    font-size: 30px;
+    font-weight: 600;
+}
+.movieDetailsSmall{
+font-size: 20px;
+}
+.imgContainer{
+flex-shrink: 0;
+}
+.castContainer{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+/* .link{
+    color: black;
+} */
+
