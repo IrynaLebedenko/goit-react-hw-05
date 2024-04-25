@@ -36,25 +36,31 @@ const MovieDetailsPage = () => {
     
     return (
         <div className={css.detailsContainer}>
-            <Link to={backLinkHref.current}>Go back</Link>
-            <div className={css.imgContainer}><img src={url} alt="photo" /></div>
             <div className={css.sideContainer}>
-                <h1 className={css.title}>{movieDetails.title}</h1>
-                <p className={css.movieDetails}>genres: {movieDetails.genres && movieDetails.genres.map((genre) => { return genre.name   })}</p>
-                <p className={css.movieDetails}>overview:</p>
+                <Link to={backLinkHref.current}>Go back</Link>
+            </div>
+            <div className={css.movieDetailContainer}>
+                <div className={css.imgContainer}><img src={url} alt="photo" /></div>
+                <div className={css.detailContainer}>
+                    <h1 className={css.title}>{movieDetails.title}</h1>
+                    <p className={css.movieDetails}>genres: {movieDetails.genres && movieDetails.genres.map((genre) => { return genre.name   })}</p>
+                    <p className={css.movieDetails}>overview:</p>
                 
-                <p className={css.movieDetailsSmall}>{movieDetails.overview}</p>
-                <p className={css.movieDetails}>user score: { movieDetails.vote_average}</p>
-                <div className={css.castContainer}>
-                <p className={css.movieDetails}>Additional information</p>
+                    <p className={css.movieDetailsSmall}>{movieDetails.overview}</p>
+                    <p className={css.movieDetails}>user score: { movieDetails.vote_average}</p>
+                
+                    <div className={css.castContainer}>
+                        <p className={css.movieDetails}>Additional information</p>
 
-                    <p><Link to='cast'>Cast</Link></p>
-                <p><Link to='reviews'>Reviews</Link></p>
-                    {loading && <Loader />}
-            {isError && <ErrorMessage/>}
-                </div>
+                        <p><Link to='cast'>Cast</Link></p>
+                        <p><Link to='reviews'>Reviews</Link></p>
+                        {loading && <Loader />}
+                        {isError && <ErrorMessage/>}
+           
+                    </div>
                 
-                <Outlet />
+                    <Outlet />
+                </div>
             </div>
         </div>
     );
